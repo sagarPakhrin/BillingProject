@@ -19,4 +19,12 @@ public class AccountantSection extends JFrame{
             }
         });
     }
+
+    public AccountantSection(){
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setSize(450,450);
+        setLocationRelativeTo(null);
+    }
+
+
 }

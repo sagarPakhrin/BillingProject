@@ -11,7 +11,7 @@ public class AccountDatabase {
     public static Connection getCon(){
         Connection connection = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/BillingProject","root","Su1was4na3");
         }catch (Exception e){
             System.out.println(e);
@@ -19,19 +19,15 @@ public class AccountDatabase {
         return connection;
     }
 
-    public static boolean validate(String name, String password){
+    public static boolean validate(String n, String p){
         boolean status = false;
         try{
             Connection connection = getCon();
-            PreparedStatement statement=connection.prepareStatement("SELECT 2, 3 FROM accountant");
+            PreparedStatement statement=connection.prepareStatement("SELECT * from accountant where name=? and password = ?");
+            statement.setString(1,n);
+            statement.setString(2,p);
             ResultSet resultSet=statement.executeQuery();
-            while(resultSet.next()){
-                if (name==resultSet.getString("name")){
-                    if (password == resultSet.getString("password")){
-                        status=true;
-                    }
-                }
-            }
+            status=resultSet.next();
             connection.close();
         }catch (Exception e){
             System.out.println(e);
