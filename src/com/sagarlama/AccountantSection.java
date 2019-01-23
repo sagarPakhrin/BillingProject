@@ -31,6 +31,12 @@ public class AccountantSection extends JFrame{
         contentPane = new JPanel(new GridBagLayout());
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
         setContentPane(contentPane);
+        JLabel lblAccountantSection = new JLabel("Accountant Section");
+        lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
+        lblAccountantSection.setForeground(Color.DARK_GRAY);
+
+
+
         JButton btnNewButton = new JButton("Add Student");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -39,9 +45,6 @@ public class AccountantSection extends JFrame{
             }
         });
 
-        JLabel lblAccountantSection = new JLabel("Accountant Section");
-        lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        lblAccountantSection.setForeground(Color.DARK_GRAY);
 
         JButton btnViewStudent = new JButton("View Student");
         btnViewStudent.addActionListener(new ActionListener() {

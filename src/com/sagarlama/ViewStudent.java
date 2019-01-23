@@ -1,11 +1,13 @@
 package com.sagarlama;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 
 public class ViewStudent extends JFrame {
     static ViewStudent frame;
     public ViewStudent(){
+        super("Student Details");
         List<Student> list =StudentDatabase.view();
         int size=list.size();
         String data[][]=new String[size][12];
@@ -31,7 +33,7 @@ public class ViewStudent extends JFrame {
         add(scrollPane);
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(800,400);
+        setMinimumSize(new Dimension(1000,400));
         setLocationRelativeTo(null);
     }
     public static void main(String[] args) {
