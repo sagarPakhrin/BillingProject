@@ -112,6 +112,7 @@ public class AddStudent extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
+                AccountantSection.enablingFrame();
             }
         });
 

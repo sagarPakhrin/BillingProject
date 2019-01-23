@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
-    static AccountantSection frame;
-//    static Main frame;
+//    static AccountantSection frame;
+    static Main frame;
     private JPanel contentPane;
     private JTextField nameField;
     private JPasswordField passwordField;
@@ -18,9 +18,9 @@ public class Main extends JFrame {
             @Override
             public void run() {
                 try{
-//                    frame = new Main();
+                    frame = new Main();
 //                    uncomment the previous line and delete the line under this line after account section is finished
-                    frame = new AccountantSection();
+//                    frame = new AccountantSection();
                     frame.setVisible(true);
                 }catch (Exception e){
                     e.printStackTrace();
@@ -54,7 +54,6 @@ public class Main extends JFrame {
                 String name = nameField.getText();
                 String password = String.valueOf(passwordField.getPassword());
                 boolean status = AccountDatabase.validate(name,password);
-                System.out.println(status);
                 if (status){
                     AccountantSection.main(new String[]{});
                     frame.dispose();

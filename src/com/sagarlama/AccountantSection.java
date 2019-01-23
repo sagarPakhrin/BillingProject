@@ -89,4 +89,7 @@ public class AccountantSection extends JFrame{
         gc.gridy++;
         contentPane.add(btnLogout,gc);
     }
+    public static void enablingFrame(){
+        frame.enable();
+    }
 }
