@@ -3,6 +3,8 @@ package com.sagarlama;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AddStudent extends JFrame {
     static AddStudent frame;
@@ -18,6 +20,8 @@ public class AddStudent extends JFrame {
     private JTextField stateField;
     private JTextField countryField;
     private JTextField contactNoField;
+    private JButton addButton;
+    private JButton cancelButton;
 
 //    Main Method
     public static void main(String[] args) {
@@ -64,6 +68,53 @@ public class AddStudent extends JFrame {
         JLabel lblContactNo = new JLabel("Contact No:");
 
 
+//        Buttons
+        addButton = new JButton("Submit");
+        cancelButton = new JButton("Cancel");
+
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = nameField.getText();
+                String email = emailField.getText();
+                String course = courseField.getText();
+                int fee = Integer.parseInt(feeField.getText());
+                int paid = Integer.parseInt(paidField.getText());
+                int due = Integer.parseInt(dueField.getText());
+                String address = addressField.getText();
+                String city = cityField.getText();
+                String state = stateField.getText();
+                String country = countryField.getText();
+                String contactno = contactNoField.getText();
+
+                Student student = new Student(name, email, course, fee, paid, due, address, city, state, country, contactno);
+                int status = StudentDatabase.save(student);
+
+                if (status > 0) {
+                    JOptionPane.showMessageDialog(AddStudent.this, "Student added successfully!");
+                    nameField.setText("");
+                    emailField.setText("");
+                    courseField.setText("");
+                    feeField.setText("");
+                    paidField.setText("");
+                    dueField.setText("");
+                    addressField.setText("");
+                    cityField.setText("");
+                    stateField.setText("");
+                    countryField.setText("");
+                    contactNoField.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(AddStudent.this, "Error adding the student, Please Try again");
+                }
+            }
+        });
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
+
 //        TextFields
 
         nameField = new JTextField(20);
@@ -105,6 +156,8 @@ public class AddStudent extends JFrame {
         contentPane.add(lblCountry,gc);
         gc.gridy++;
         contentPane.add(lblContactNo,gc);
+        gc.gridy++;
+        contentPane.add(addButton,gc);
 
 
 
@@ -134,5 +187,7 @@ public class AddStudent extends JFrame {
         contentPane.add(countryField,gc);
         gc.gridy++;
         contentPane.add(contactNoField,gc);
+        gc.gridy++;
+        contentPane.add(cancelButton,gc);
     }
 }
