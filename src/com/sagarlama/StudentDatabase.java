@@ -55,4 +55,33 @@ public class StudentDatabase {
         return status;
     }
 
+    public static List<Student> due(){
+        List<Student> list = new ArrayList<Student>();
+        try{
+            Connection connection = AccountDatabase.getCon();
+            PreparedStatement statement = connection.prepareStatement("select * from student where due>0");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                Student student = new Student();
+                student.setRollno(resultSet.getInt("rollno"));
+                student.setName(resultSet.getString("name"));
+                student.setEmail(resultSet.getString("email"));
+                student.setCourse(resultSet.getString("course"));
+                student.setFee(resultSet.getInt("fee"));
+                student.setPaid(resultSet.getInt("paid"));
+                student.setDue(resultSet.getInt("due"));
+                student.setAddress(resultSet.getString("address"));
+                student.setCity(resultSet.getString("city"));
+                student.setState(resultSet.getString("state"));
+                student.setCountry(resultSet.getString("country"));
+                student.setContactno(resultSet.getString("contactno"));
+                list.add(student);
+            }
+            connection.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return list;
+    }
+
 }
