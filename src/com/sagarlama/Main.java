@@ -36,6 +36,7 @@ public class Main extends JFrame {
         super("Login");
         setSize(500,300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+//        setup Menubar
 
         Container container = getContentPane();
         contentPane = new JPanel(new GridBagLayout());
@@ -134,4 +135,8 @@ public class Main extends JFrame {
         setResizable(false);
         container.add(contentPane);
     }
+
+
+
+
 }

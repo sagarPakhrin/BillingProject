@@ -31,6 +31,11 @@ public class AccountantSection extends JFrame{
         contentPane = new JPanel(new GridBagLayout());
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
         setContentPane(contentPane);
+
+//        setting menubar
+        setJMenuBar(createMenuBar());
+
+
         JLabel lblAccountantSection = new JLabel("Accountant Section");
         lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
         lblAccountantSection.setForeground(Color.DARK_GRAY);
@@ -87,5 +92,26 @@ public class AccountantSection extends JFrame{
         contentPane.add(btnDueFee,gc);
         gc.gridy++;
         contentPane.add(btnLogout,gc);
+    }
+
+
+
+
+    //    Adding Menues
+    public JMenuBar createMenuBar(){
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        JMenu editMenu = new JMenu("Edit");
+
+
+//        Menuitems for file menu
+        JMenuItem addStudent = new JMenuItem("Add Student");
+        JMenuItem deleteStudent = new JMenuItem("Delete Student");
+        JMenuItem exitItem = new JMenuItem("Exit");
+        fileMenu.add(addStudent);
+        fileMenu.add(deleteStudent);
+        fileMenu.add(exitItem);
+
+        return menuBar;
     }
 }
