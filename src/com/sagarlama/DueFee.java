@@ -18,7 +18,7 @@ public class DueFee extends JFrame {
             data[row][0]=String.valueOf(student.getRollno());
             data[row][1]=student.getName();
             data[row][2]=student.getEmail();
-            data[row][3]=student.getCourse();
+            data[row][3]=String.valueOf(student.getGrade());
             data[row][4]=String.valueOf(student.getFee());
             data[row][5]=String.valueOf(student.getPaid());
             data[row][6]=String.valueOf(student.getDue());
@@ -29,7 +29,7 @@ public class DueFee extends JFrame {
             data[row][11]=student.getContactno();
             row++;
         }
-        String columnNames[]={"Rollno","Name","Email","Course","Fee","Paid","Due","Address","City","State","Country","Contact No"};
+        String columnNames[]={"Rollno","Name","Email","Grade","Fee","Paid","Due","Address","City","State","Country","Contact No"};
 
         JTable table=new JTable(data,columnNames);
         JScrollPane scrollPane=new JScrollPane(table);

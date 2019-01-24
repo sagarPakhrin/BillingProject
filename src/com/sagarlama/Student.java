@@ -1,21 +1,22 @@
 package com.sagarlama;
 
 public class Student {
-    private int rollno,fee,paid,due;
-    private String name,email,course,address,city,state,country,contactno;
+    private int rollno,fee,paid,due,grade;
+    private String name,email,address,city,state,country,contactno;
 
 
 
 //    default constructor without any arguments
-    public Student(){}
+    public Student(){
+    }
 
-    public Student(String name, String email, String course, int fee, int paid, int due, String address, String city,
+    public Student(String name, String email, int grade, int fee, int paid, int due, String address, String city,
                    String state, String country, String contactno) {
 //        Super will call the default constructor
         super();
         this.name = name;
         this.email = email;
-        this.course = course;
+        this.grade = grade;
         this.fee = fee;
         this.paid = paid;
         this.due = due;
@@ -26,13 +27,13 @@ public class Student {
         this.contactno = contactno;
     }
 
-    public Student(int rollno, String name, String email, String course, int fee, int paid, int due, String address,
+    public Student(int rollno, String name, String email, int grade, int fee, int paid, int due, String address,
 		String city, String state, String country, String contactno) {
         super();
         this.rollno = rollno;
         this.name = name;
         this.email = email;
-        this.course = course;
+        this.grade = grade;
         this.fee = fee;
         this.paid = paid;
         this.due = due;
@@ -91,12 +92,12 @@ public class Student {
         this.email = email;
     }
 
-    public String getCourse() {
-        return course;
+    public int getGrade() {
+        return grade;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     public String getAddress() {

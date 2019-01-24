@@ -112,6 +112,9 @@ public class AccountantSection extends JFrame{
         fileMenu.add(deleteStudent);
         fileMenu.add(exitItem);
 
+
+        menuBar.add(fileMenu);
+        menuBar.add(editMenu);
         return menuBar;
     }
 }

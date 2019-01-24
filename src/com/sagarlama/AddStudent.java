@@ -11,7 +11,7 @@ public class AddStudent extends JFrame {
     private JPanel contentPane;
     private JTextField nameField;
     private JTextField emailField;
-    private JTextField courseField;
+    private JTextField gradeField;
     private JTextField feeField;
     private JTextField paidField;
     private JTextField dueField;
@@ -57,7 +57,7 @@ public class AddStudent extends JFrame {
 //        Lables
         JLabel lblName = new JLabel("Name:");
         JLabel lblEmail = new JLabel("Email:");
-        JLabel lblCourse = new JLabel("Course:");
+        JLabel lblGrade = new JLabel("Grade:");
         JLabel lblFee = new JLabel("Fee:");
         JLabel lblPaid = new JLabel("Paid:");
         JLabel lblDue = new JLabel("Due:");
@@ -77,7 +77,7 @@ public class AddStudent extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name = nameField.getText();
                 String email = emailField.getText();
-                String course = courseField.getText();
+                int grade = Integer.parseInt(gradeField.getText());
                 int fee = Integer.parseInt(feeField.getText());
                 int paid = Integer.parseInt(paidField.getText());
                 int due = Integer.parseInt(dueField.getText());
@@ -87,14 +87,14 @@ public class AddStudent extends JFrame {
                 String country = countryField.getText();
                 String contactno = contactNoField.getText();
 
-                Student student = new Student(name, email, course, fee, paid, due, address, city, state, country, contactno);
+                Student student = new Student(name, email, grade, fee, paid, due, address, city, state, country, contactno);
                 int status = StudentDatabase.save(student);
 
                 if (status > 0) {
                     JOptionPane.showMessageDialog(AddStudent.this, "Student added successfully!");
                     nameField.setText("");
                     emailField.setText("");
-                    courseField.setText("");
+                    gradeField.setText("");
                     feeField.setText("");
                     paidField.setText("");
                     dueField.setText("");
@@ -119,7 +119,7 @@ public class AddStudent extends JFrame {
 
         nameField = new JTextField(20);
         emailField = new JTextField(20);
-        courseField = new JTextField(20);
+        gradeField = new JTextField(20);
         feeField = new JTextField(20);
         paidField = new JTextField(20);
         dueField = new JTextField(20);
@@ -139,7 +139,7 @@ public class AddStudent extends JFrame {
         gc.gridy++;
         contentPane.add(lblEmail,gc);
         gc.gridy++;
-        contentPane.add(lblCourse,gc);
+        contentPane.add(lblGrade,gc);
         gc.gridy++;
         contentPane.add(lblFee,gc);
         gc.gridy++;
@@ -170,7 +170,7 @@ public class AddStudent extends JFrame {
         gc.gridy++;
         contentPane.add(emailField,gc);
         gc.gridy++;
-        contentPane.add(courseField,gc);
+        contentPane.add(gradeField,gc);
         gc.gridy++;
         contentPane.add(feeField,gc);
         gc.gridy++;

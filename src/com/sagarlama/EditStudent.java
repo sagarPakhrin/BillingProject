@@ -11,7 +11,7 @@ public class EditStudent extends JFrame {
     private JPanel contentPane;
     private JTextField nameField;
     private JTextField emailField;
-    private JTextField courseField;
+    private JTextField gradeField;
     private JTextField feeField;
     private JTextField paidField;
     private JTextField dueField;
@@ -55,7 +55,7 @@ public class EditStudent extends JFrame {
 //        Lables
         JLabel lblName = new JLabel("Name:");
         JLabel lblEmail = new JLabel("Email:");
-        JLabel lblCourse = new JLabel("Course:");
+        JLabel lblGrade = new JLabel("Grade:");
         JLabel lblFee = new JLabel("Fee:");
         JLabel lblPaid = new JLabel("Paid:");
         JLabel lblDue = new JLabel("Due:");
@@ -85,7 +85,7 @@ public class EditStudent extends JFrame {
 
         nameField = new JTextField(20);
         emailField = new JTextField(20);
-        courseField = new JTextField(20);
+        gradeField = new JTextField(20);
         feeField = new JTextField(20);
         paidField = new JTextField(20);
         dueField = new JTextField(20);
@@ -105,7 +105,7 @@ public class EditStudent extends JFrame {
         gc.gridy++;
         contentPane.add(lblEmail,gc);
         gc.gridy++;
-        contentPane.add(lblCourse,gc);
+        contentPane.add(lblGrade,gc);
         gc.gridy++;
         contentPane.add(lblFee,gc);
         gc.gridy++;
@@ -134,7 +134,7 @@ public class EditStudent extends JFrame {
         gc.gridy++;
         contentPane.add(emailField,gc);
         gc.gridy++;
-        contentPane.add(courseField,gc);
+        contentPane.add(gradeField,gc);
         gc.gridy++;
         contentPane.add(feeField,gc);
         gc.gridy++;

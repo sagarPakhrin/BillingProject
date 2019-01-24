@@ -19,7 +19,7 @@ public class StudentDatabase {
                 student.setRollno(resultSet.getInt("rollno"));
                 student.setName(resultSet.getString("name"));
                 student.setEmail(resultSet.getString("email"));
-                student.setCourse(resultSet.getString("course"));
+                student.setGrade(resultSet.getInt("grade"));
                 student.setFee(resultSet.getInt("fee"));
                 student.setPaid(resultSet.getInt("paid"));
                 student.setDue(resultSet.getInt("due"));
@@ -37,10 +37,10 @@ public class StudentDatabase {
         int status=0;
         try{
             Connection con=AccountDatabase.getCon();
-            PreparedStatement statement=con.prepareStatement("insert into student(name,email,course,fee,paid,due,address,city,state,country,contactno) values(?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement statement=con.prepareStatement("insert into student(name,email,grade,fee,paid,due,address,city,state,country,contactno) values(?,?,?,?,?,?,?,?,?,?,?)");
             statement.setString(1,student.getName());
             statement.setString(2,student.getEmail());
-            statement.setString(3, student.getCourse());
+            statement.setInt(3, student.getGrade());
             statement.setInt(4,student.getFee());
             statement.setInt(5,student.getPaid());
             statement.setInt(6,student.getDue());
@@ -66,7 +66,7 @@ public class StudentDatabase {
                 student.setRollno(resultSet.getInt("rollno"));
                 student.setName(resultSet.getString("name"));
                 student.setEmail(resultSet.getString("email"));
-                student.setCourse(resultSet.getString("course"));
+                student.setGrade(resultSet.getInt("grade"));
                 student.setFee(resultSet.getInt("fee"));
                 student.setPaid(resultSet.getInt("paid"));
                 student.setDue(resultSet.getInt("due"));
