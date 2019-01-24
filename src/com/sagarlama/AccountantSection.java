@@ -41,7 +41,6 @@ public class AccountantSection extends JFrame{
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AddStudent.main(new String[]{});
-                frame.disable();
             }
         });
 
