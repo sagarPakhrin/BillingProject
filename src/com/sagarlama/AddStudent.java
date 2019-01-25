@@ -47,6 +47,7 @@ public class AddStudent extends JFrame {
         GridBagConstraints gc = new GridBagConstraints();
         setContentPane(contentPane);
 
+        setJMenuBar(AccountantSection.createMenuBar());
 
 //        Setting Heading
         JLabel lblAddAccountant = new JLabel("Add Student");

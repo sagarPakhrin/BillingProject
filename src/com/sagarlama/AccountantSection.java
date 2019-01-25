@@ -98,7 +98,7 @@ public class AccountantSection extends JFrame{
 
 
     //    Adding Menues
-    public JMenuBar createMenuBar(){
+    public static JMenuBar createMenuBar(){
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
         JMenu editMenu = new JMenu("Edit");
