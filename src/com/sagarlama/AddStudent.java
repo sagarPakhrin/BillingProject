@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 public class AddStudent extends JFrame {
     static AddStudent frame;
     private JPanel contentPane;
+    private MenuBar myMenubar=new MenuBar();
     private JTextField nameField;
     private JTextField emailField;
     private JTextField gradeField;
@@ -47,7 +48,7 @@ public class AddStudent extends JFrame {
         GridBagConstraints gc = new GridBagConstraints();
         setContentPane(contentPane);
 
-        setJMenuBar(AccountantSection.createMenuBar());
+        setJMenuBar(myMenubar);
 
 //        Setting Heading
         JLabel lblAddAccountant = new JLabel("Add Student");

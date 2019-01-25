@@ -25,6 +25,7 @@ import javax.swing.JSeparator;
 public class EditStudent extends JFrame {
     static EditStudent frame;
     private JPanel contentPane;
+    private MenuBar myMenubar=new MenuBar();
     private JTextField textField;
     private JTextField textField_1;
     private JTextField textField_2;
@@ -62,6 +63,7 @@ public class EditStudent extends JFrame {
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
+        setResizable(false);
 
         JLabel lblName = new JLabel("Name:");
         JLabel lblEmail = new JLabel("Email:");

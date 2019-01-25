@@ -135,8 +135,4 @@ public class Main extends JFrame {
         setResizable(false);
         container.add(contentPane);
     }
-
-
-
-
 }
