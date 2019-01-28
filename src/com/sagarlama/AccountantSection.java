@@ -11,6 +11,7 @@ public class AccountantSection extends JFrame{
     static AccountantSection frame;
     private JPanel contentPane;
     private MenuBar myMenuBar=new MenuBar();
+    private Font btnFont = new Font("Crimson Text",Font.BOLD,17);
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -27,11 +28,11 @@ public class AccountantSection extends JFrame{
 
     public AccountantSection(){
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(400,400);
         GridBagConstraints gc = new GridBagConstraints();
         setLocationRelativeTo(null);
         contentPane = new JPanel(new GridBagLayout());
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
+        contentPane.setBackground(new Color(232,232,232));
         setContentPane(contentPane);
 
 //        setting menubar
@@ -77,12 +78,39 @@ public class AccountantSection extends JFrame{
         JButton btnLogout = new JButton("Logout");
         btnLogout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                FeeReport.main(new String[]{});
+                Main.main(new String[]{});
                 frame.dispose();
             }
         });
+
+        btnNewButton.setForeground(Color.white);
+        btnNewButton.setBackground(new Color(14, 75, 84));
+        btnNewButton.setBorderPainted(false);
+        btnNewButton.setFont(btnFont);
+        btnViewStudent.setForeground(Color.white);
+        btnViewStudent.setBackground(new Color(14, 75, 84));
+        btnViewStudent.setBorderPainted(false);
+        btnViewStudent.setFont(btnFont);
+        btnEditStudent.setForeground(Color.white);
+        btnEditStudent.setBackground(new Color(14, 75, 84));
+        btnEditStudent.setBorderPainted(false);
+        btnEditStudent.setFont(btnFont);
+        btnDueFee.setForeground(Color.white);
+        btnDueFee.setBackground(new Color(14, 75, 84));
+        btnDueFee.setBorderPainted(false);
+        btnDueFee.setFont(btnFont);
+        btnLogout.setForeground(Color.white);
+        btnLogout.setBackground(new Color(14, 75, 84));
+        btnLogout.setBorderPainted(false);
+        btnLogout.setFont(btnFont);
+
+
+
+
         gc.gridy=0;
         gc.gridx=0;
+        gc.insets = new Insets(4,10,4,10);
+        gc.fill=GridBagConstraints.HORIZONTAL;
         contentPane.add(lblAccountantSection,gc);
         gc.gridy++;
         contentPane.add(btnNewButton,gc);
@@ -94,6 +122,12 @@ public class AccountantSection extends JFrame{
         contentPane.add(btnDueFee,gc);
         gc.gridy++;
         contentPane.add(btnLogout,gc);
+
+
+
+
+        setMinimumSize(new Dimension(400,400));
+        setResizable(false);
     }
 
 

@@ -3,24 +3,15 @@ package com.sagarlama;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextArea;
-import javax.swing.JSeparator;
 
 public class EditStudent extends JFrame {
     static EditStudent frame;
@@ -37,6 +28,8 @@ public class EditStudent extends JFrame {
     private JTextField textField_9;
     JTextArea textArea;
     private JTextField textField_10;
+    private Color inputFieldColor = new Color(88, 157, 145);
+    private Color brand = new Color(10, 47, 54);
     /**
      * Launch the application.
      */
@@ -61,28 +54,20 @@ public class EditStudent extends JFrame {
         setBounds(100, 100, 450, 550);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackground(new Color(226,251,221));
         setContentPane(contentPane);
+        setResizable(false);
 
         JLabel lblName = new JLabel("Name:");
-
         JLabel lblEmail = new JLabel("Email:");
-
         JLabel lblCourse = new JLabel("Course:");
-
         JLabel lblFee = new JLabel("Fee:");
-
         JLabel lblPaid = new JLabel("Paid:");
-
         JLabel lblDue = new JLabel("Due:");
-
         JLabel lblAddress = new JLabel("Address:");
-
         JLabel lblCity = new JLabel("City:");
-
         JLabel lblState = new JLabel("State:");
-
         JLabel lblCountry = new JLabel("Country:");
-
         JLabel lblContactNo = new JLabel("Contact No:");
 
         JButton btnAddAccountant = new JButton("Update Student");
@@ -114,37 +99,41 @@ public class EditStudent extends JFrame {
             }
         });
 
-        textField = new JTextField();
-        textField.setColumns(10);
-
-        textField_1 = new JTextField();
-        textField_1.setColumns(10);
-
-        textField_2 = new JTextField();
-        textField_2.setColumns(10);
-
-        textField_3 = new JTextField();
-        textField_3.setColumns(10);
-
-        textField_4 = new JTextField();
-        textField_4.setColumns(10);
-
-        textField_5 = new JTextField();
-        textField_5.setColumns(10);
-
-        textField_6 = new JTextField();
-        textField_6.setColumns(10);
-
-        textField_7 = new JTextField();
-        textField_7.setColumns(10);
-
-        textField_8 = new JTextField();
-        textField_8.setColumns(10);
-
-        textField_9 = new JTextField();
-        textField_9.setColumns(10);
-
+        textField = new JTextField(10);
+        textField_1 = new JTextField(10);
+        textField_2 = new JTextField(10);
+        textField_3 = new JTextField(10);
+        textField_4 = new JTextField(10);
+        textField_5 = new JTextField(10);
+        textField_6 = new JTextField(10);
+        textField_7 = new JTextField(10);
+        textField_8 = new JTextField(10);
+        textField_9 = new JTextField(10);
         textArea = new JTextArea();
+
+        textField.setBackground(inputFieldColor);
+        textField_1.setBackground(inputFieldColor);
+        textField_2.setBackground(inputFieldColor);
+        textField_3.setBackground(inputFieldColor);
+        textField_4.setBackground(inputFieldColor);
+        textField_5.setBackground(inputFieldColor);
+        textField_6.setBackground(inputFieldColor);
+        textField_7.setBackground(inputFieldColor);
+        textField_8.setBackground(inputFieldColor);
+        textField_9.setBackground(inputFieldColor);
+        textArea.setBackground(inputFieldColor);
+
+        textField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_1.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_2.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_3.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_4.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_5.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_6.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_7.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_8.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_9.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textArea.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
 
         JButton btnBack = new JButton("back");
         btnBack.addActionListener(new ActionListener() {
@@ -303,7 +292,7 @@ public class EditStudent extends JFrame {
                                         .addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(7)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(btnAddAccountant, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAddAccountant, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnBack))
                                 .addContainerGap())
         );

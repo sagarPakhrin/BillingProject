@@ -11,9 +11,9 @@ public class Main extends JFrame {
     private JPanel contentPane;
     private JTextField nameField;
     private JPasswordField passwordField;
-    private Color brand = new Color(211,24,33);
-    private Color bgColor = new Color(61,77,111);
-    private Color inputFieldColor = new Color(80,95,128);
+    private Color brand = new Color(10, 47, 54);
+    private Color bgColor = new Color(14, 75, 84);
+    private Color inputFieldColor = new Color(88, 157, 145);
     private Font labelFont = new Font("Crimson Text",Font.BOLD,17);
 
 
@@ -47,7 +47,7 @@ public class Main extends JFrame {
         nameField=new JTextField(15);
         passwordField=new JPasswordField(15);
         JButton btnLogin = new JButton("Login");
-        JButton btnBack = new JButton("Back");
+        JButton btnBack = new JButton("Exit");
 
 
 //        Styling Lables
@@ -62,8 +62,8 @@ public class Main extends JFrame {
         nameField.setForeground(Color.white);
         passwordField.setBackground(inputFieldColor);
         passwordField.setForeground(Color.white);
-        nameField.setBorder(BorderFactory.createMatteBorder(0,0,2,0,brand));
-        passwordField.setBorder(BorderFactory.createMatteBorder(0,0,2,0,brand));
+        nameField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        passwordField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
 
 
 //        Styling jbuttons
@@ -71,16 +71,18 @@ public class Main extends JFrame {
         btnBack.setBorderPainted(false);
         btnBack.setFocusPainted(false);
         btnBack.setForeground(Color.white);
-        btnBack.setBackground(new Color(52,56,94));
+        btnBack.setBackground(new Color(42, 94, 84));
         btnLogin.setFont(labelFont);
         btnLogin.setBorderPainted(false);
         btnLogin.setFocusPainted(false);
         btnLogin.setForeground(Color.white);
-        btnLogin.setBackground(new Color(52,56,94));
+        btnLogin.setBackground(new Color(42, 94, 84));
 
 
 //        GridBagLayout declaration
         GridBagConstraints gc = new GridBagConstraints();
+
+
 
 //        Action Listener
         btnLogin.addActionListener(new ActionListener() {
@@ -89,7 +91,6 @@ public class Main extends JFrame {
                 String name = nameField.getText();
                 String password = String.valueOf(passwordField.getPassword());
                 boolean status = AccountDatabase.validate(name,password);
-                System.out.println(status);
                 if (status){
                     AccountantSection.main(new String[]{});
                     frame.dispose();
@@ -99,9 +100,15 @@ public class Main extends JFrame {
             }
         });
 
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
 
-
+//        Login in hitting Return Key
 
 //        adding Components
         gc.gridy=0;
