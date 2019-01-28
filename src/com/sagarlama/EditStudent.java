@@ -25,7 +25,6 @@ import javax.swing.JSeparator;
 public class EditStudent extends JFrame {
     static EditStudent frame;
     private JPanel contentPane;
-    private MenuBar myMenubar=new MenuBar();
     private JTextField textField;
     private JTextField textField_1;
     private JTextField textField_2;
@@ -63,26 +62,35 @@ public class EditStudent extends JFrame {
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
-        setResizable(false);
 
         JLabel lblName = new JLabel("Name:");
+
         JLabel lblEmail = new JLabel("Email:");
-        JLabel lblGrade = new JLabel("Grade:");
+
+        JLabel lblCourse = new JLabel("Course:");
+
         JLabel lblFee = new JLabel("Fee:");
+
         JLabel lblPaid = new JLabel("Paid:");
+
         JLabel lblDue = new JLabel("Due:");
+
         JLabel lblAddress = new JLabel("Address:");
+
         JLabel lblCity = new JLabel("City:");
+
         JLabel lblState = new JLabel("State:");
+
         JLabel lblCountry = new JLabel("Country:");
+
         JLabel lblContactNo = new JLabel("Contact No:");
 
-        JButton updateStudentData = new JButton("Update Student");
-        updateStudentData.addActionListener(new ActionListener() {
+        JButton btnAddAccountant = new JButton("Update Student");
+        btnAddAccountant.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name=textField.getText();
                 String email=textField_1.getText();
-                int grade=Integer.parseInt(textField_2.getText());
+                int course=Integer.parseInt(textField_2.getText());
                 int fee=Integer.parseInt(textField_3.getText());
                 int paid=Integer.parseInt(textField_4.getText());
                 int due=Integer.parseInt(textField_5.getText());
@@ -93,7 +101,7 @@ public class EditStudent extends JFrame {
                 String contactno=textField_9.getText();
                 int rollno=Integer.parseInt(textField_10.getText());
 
-                Student s=new Student(rollno,name,email,grade,fee,paid,due,address,city,state,country,contactno);
+                Student s=new Student(rollno,name,email,course,fee,paid,due,address,city,state,country,contactno);
                 int status=StudentDatabase.update(s);
 
                 if(status>0){
@@ -183,7 +191,7 @@ public class EditStudent extends JFrame {
                                 .addContainerGap()
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
                                         .addComponent(lblName)
-                                        .addComponent(lblGrade, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblCourse, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lblFee, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lblPaid, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lblDue, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
@@ -224,7 +232,7 @@ public class EditStudent extends JFrame {
                                 .addContainerGap(383, Short.MAX_VALUE))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addGap(128)
-                                .addComponent(updateStudentData, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAddAccountant, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
                                 .addComponent(btnBack)
                                 .addContainerGap(78, Short.MAX_VALUE))
@@ -256,7 +264,7 @@ public class EditStudent extends JFrame {
                                         .addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(lblGrade)
+                                        .addComponent(lblCourse)
                                         .addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
@@ -295,7 +303,7 @@ public class EditStudent extends JFrame {
                                         .addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(7)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(updateStudentData, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAddAccountant, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnBack))
                                 .addContainerGap())
         );
