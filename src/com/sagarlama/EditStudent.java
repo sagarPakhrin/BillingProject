@@ -28,8 +28,9 @@ public class EditStudent extends JFrame {
     private JTextField textField_9;
     JTextArea textArea;
     private JTextField textField_10;
-    private Color inputFieldColor = new Color(88, 157, 145);
-    private Color brand = new Color(10, 47, 54);
+    private Color inputFieldColor = new Color(143, 228, 216);
+    private Color brand = new Color(245, 248, 255);
+    private Font labelFont = new Font("Crimson Text",Font.BOLD,17);
     /**
      * Launch the application.
      */
@@ -60,7 +61,7 @@ public class EditStudent extends JFrame {
 
         JLabel lblName = new JLabel("Name:");
         JLabel lblEmail = new JLabel("Email:");
-        JLabel lblCourse = new JLabel("Course:");
+        JLabel lblGrade = new JLabel("Course:");
         JLabel lblFee = new JLabel("Fee:");
         JLabel lblPaid = new JLabel("Paid:");
         JLabel lblDue = new JLabel("Due:");
@@ -70,8 +71,8 @@ public class EditStudent extends JFrame {
         JLabel lblCountry = new JLabel("Country:");
         JLabel lblContactNo = new JLabel("Contact No:");
 
-        JButton btnAddAccountant = new JButton("Update Student");
-        btnAddAccountant.addActionListener(new ActionListener() {
+        JButton btnUpdate = new JButton("Update");
+        btnUpdate.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name=textField.getText();
                 String email=textField_1.getText();
@@ -109,6 +110,7 @@ public class EditStudent extends JFrame {
         textField_7 = new JTextField(10);
         textField_8 = new JTextField(10);
         textField_9 = new JTextField(10);
+        textField_10 = new JTextField(10);
         textArea = new JTextArea();
 
         textField.setBackground(inputFieldColor);
@@ -121,6 +123,7 @@ public class EditStudent extends JFrame {
         textField_7.setBackground(inputFieldColor);
         textField_8.setBackground(inputFieldColor);
         textField_9.setBackground(inputFieldColor);
+        textField_10.setBackground(inputFieldColor);
         textArea.setBackground(inputFieldColor);
 
         textField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
@@ -133,6 +136,7 @@ public class EditStudent extends JFrame {
         textField_7.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
         textField_8.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
         textField_9.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        textField_10.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
         textArea.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
 
         JButton btnBack = new JButton("back");
@@ -145,8 +149,6 @@ public class EditStudent extends JFrame {
 
         JLabel lblRollNo = new JLabel("Roll No:");
 
-        textField_10 = new JTextField();
-        textField_10.setColumns(10);
 
         JSeparator separator = new JSeparator();
 
@@ -173,6 +175,25 @@ public class EditStudent extends JFrame {
                 }
             }
         });
+
+        btnBack.setFont(labelFont);
+        btnBack.setBorderPainted(false);
+        btnBack.setFocusPainted(false);
+        btnBack.setForeground(Color.white);
+        btnBack.setBackground(new Color(42, 94, 84));
+        btnLoadRecord.setFont(labelFont);
+        btnLoadRecord.setBorderPainted(false);
+        btnLoadRecord.setFocusPainted(false);
+        btnLoadRecord.setForeground(Color.white);
+        btnLoadRecord.setBackground(new Color(42, 94, 84));
+        btnUpdate.setFont(labelFont);
+        btnUpdate.setBorderPainted(false);
+        btnUpdate.setFocusPainted(false);
+        btnUpdate.setForeground(Color.white);
+        btnUpdate.setBackground(new Color(42, 94, 84));
+
+
+
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(
                 gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -180,7 +201,7 @@ public class EditStudent extends JFrame {
                                 .addContainerGap()
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
                                         .addComponent(lblName)
-                                        .addComponent(lblCourse, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblGrade, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lblFee, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lblPaid, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lblDue, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
@@ -221,7 +242,7 @@ public class EditStudent extends JFrame {
                                 .addContainerGap(383, Short.MAX_VALUE))
                         .addGroup(gl_contentPane.createSequentialGroup()
                                 .addGap(128)
-                                .addComponent(btnAddAccountant, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18)
                                 .addComponent(btnBack)
                                 .addContainerGap(78, Short.MAX_VALUE))
@@ -253,7 +274,7 @@ public class EditStudent extends JFrame {
                                         .addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-                                        .addComponent(lblCourse)
+                                        .addComponent(lblGrade)
                                         .addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(ComponentPlacement.UNRELATED)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
@@ -292,7 +313,7 @@ public class EditStudent extends JFrame {
                                         .addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addGap(7)
                                 .addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-                                        .addComponent(btnAddAccountant, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnUpdate, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnBack))
                                 .addContainerGap())
         );
