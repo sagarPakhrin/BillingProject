@@ -12,8 +12,8 @@ public class Main extends JFrame {
     private JTextField nameField;
     private JPasswordField passwordField;
     private Color brand = new Color(10, 47, 54);
-    private Color bgColor = new Color(14, 75, 84);
-    private Color inputFieldColor = new Color(88, 157, 145);
+    private Color bgColor = new Color(66, 66, 66);
+    private Color inputFieldColor = new Color(115, 104, 101);
     private Font labelFont = new Font("Crimson Text",Font.BOLD,17);
 
 

@@ -12,6 +12,7 @@ public class AccountantSection extends JFrame{
     private JPanel contentPane;
     private MenuBar myMenuBar=new MenuBar();
     private Font btnFont = new Font("Crimson Text",Font.BOLD,17);
+    private Color btnColor = new Color(66, 66, 66);
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -32,7 +33,8 @@ public class AccountantSection extends JFrame{
         setLocationRelativeTo(null);
         contentPane = new JPanel(new GridBagLayout());
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
-        contentPane.setBackground(new Color(232,232,232));
+        contentPane.setBackground(new Color(115, 104, 101));
+        contentPane.setForeground(new Color(255,255,255));
         setContentPane(contentPane);
 
 //        setting menubar
@@ -41,7 +43,7 @@ public class AccountantSection extends JFrame{
 
         JLabel lblAccountantSection = new JLabel("Accountant Section");
         lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        lblAccountantSection.setForeground(Color.DARK_GRAY);
+        lblAccountantSection.setForeground(Color.WHITE);
 
 
 
@@ -85,23 +87,23 @@ public class AccountantSection extends JFrame{
         });
 
         btnNewButton.setForeground(Color.white);
-        btnNewButton.setBackground(new Color(14, 75, 84));
+        btnNewButton.setBackground(btnColor);
         btnNewButton.setBorderPainted(false);
         btnNewButton.setFont(btnFont);
         btnViewStudent.setForeground(Color.white);
-        btnViewStudent.setBackground(new Color(14, 75, 84));
+        btnViewStudent.setBackground(btnColor);
         btnViewStudent.setBorderPainted(false);
         btnViewStudent.setFont(btnFont);
         btnEditStudent.setForeground(Color.white);
-        btnEditStudent.setBackground(new Color(14, 75, 84));
+        btnEditStudent.setBackground(btnColor);
         btnEditStudent.setBorderPainted(false);
         btnEditStudent.setFont(btnFont);
         btnDueFee.setForeground(Color.white);
-        btnDueFee.setBackground(new Color(14, 75, 84));
+        btnDueFee.setBackground(btnColor);
         btnDueFee.setBorderPainted(false);
         btnDueFee.setFont(btnFont);
         btnLogout.setForeground(Color.white);
-        btnLogout.setBackground(new Color(14, 75, 84));
+        btnLogout.setBackground(btnColor);
         btnLogout.setBorderPainted(false);
         btnLogout.setFont(btnFont);
 

@@ -13,6 +13,11 @@ public class AddStudent extends JFrame {
     private JPanel contentPane;
     private JPanel btnPane;
     private MenuBar myMenubar=new MenuBar();
+    private Color bgColor = new Color(66, 66, 66);
+    private Color btnColor = new Color(66, 66, 66);
+    private Color brand = new Color(10, 47, 54);
+    private Font btnFont = new Font("Crimson Text",Font.BOLD,17);
+    private Color inputFieldColor = new Color(115, 104, 101);
     private JTextField nameField;
     private JTextField emailField;
     private JTextField gradeField;
@@ -48,8 +53,10 @@ public class AddStudent extends JFrame {
 
         contentPane = new JPanel(new GridBagLayout());
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
+        contentPane.setBackground(bgColor);
         GridBagConstraints gc = new GridBagConstraints();
         btnPane = new JPanel(new GridBagLayout());
+        btnPane.setBackground(bgColor);
         GridBagConstraints btnGc = new GridBagConstraints();
         setContentPane(contentPane);
 
@@ -123,8 +130,19 @@ public class AddStudent extends JFrame {
             }
         });
 
-//        TextFields
 
+        addButton.setForeground(Color.white);
+        addButton.setBackground(btnColor);
+        addButton.setBorderPainted(false);
+        addButton.setFont(btnFont);
+        cancelButton.setForeground(Color.white);
+        cancelButton.setBackground(btnColor);
+        cancelButton.setBorderPainted(false);
+        cancelButton.setFont(btnFont);
+
+
+
+//        TextFields
         nameField = new JTextField(20);
         emailField = new JTextField(20);
         gradeField = new JTextField(20);
@@ -136,6 +154,46 @@ public class AddStudent extends JFrame {
         stateField = new JTextField(20);
         countryField = new JTextField(20);
         contactNoField = new JTextField(20);
+
+
+
+        nameField.setBackground(inputFieldColor);
+        emailField.setBackground(inputFieldColor);
+        gradeField.setBackground(inputFieldColor);
+        feeField.setBackground(inputFieldColor);
+        paidField.setBackground(inputFieldColor);
+        dueField.setBackground(inputFieldColor);
+        addressField.setBackground(inputFieldColor);
+        cityField.setBackground(inputFieldColor);
+        stateField.setBackground(inputFieldColor);
+        countryField.setBackground(inputFieldColor);
+        contactNoField.setBackground(inputFieldColor);
+
+        nameField.setForeground(Color.white);
+        emailField.setForeground(Color.white);
+        gradeField.setForeground(Color.white);
+        feeField.setForeground(Color.white);
+        paidField.setForeground(Color.white);
+        dueField.setForeground(Color.white);
+        addressField.setForeground(Color.white);
+        cityField.setForeground(Color.white);
+        stateField.setForeground(Color.white);
+        countryField.setForeground(Color.white);
+        contactNoField.setForeground(Color.white);
+
+
+
+        nameField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        emailField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        gradeField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        feeField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        paidField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        dueField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        addressField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        cityField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        stateField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        countryField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
+        contactNoField.setBorder(BorderFactory.createMatteBorder(0,0,0,0,brand));
 
 
         dueField.setEditable(false);
