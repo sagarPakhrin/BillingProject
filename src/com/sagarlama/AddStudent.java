@@ -11,6 +11,7 @@ import java.awt.event.FocusListener;
 public class AddStudent extends JFrame {
     static AddStudent frame;
     private JPanel contentPane;
+    private JPanel btnPane;
     private MenuBar myMenubar=new MenuBar();
     private JTextField nameField;
     private JTextField emailField;
@@ -48,6 +49,8 @@ public class AddStudent extends JFrame {
         contentPane = new JPanel(new GridBagLayout());
         contentPane.setBorder(new EmptyBorder(5,5,5,5));
         GridBagConstraints gc = new GridBagConstraints();
+        btnPane = new JPanel(new GridBagLayout());
+        GridBagConstraints btnGc = new GridBagConstraints();
         setContentPane(contentPane);
 
         setJMenuBar(myMenubar);
@@ -156,6 +159,7 @@ public class AddStudent extends JFrame {
         gc.gridx=0;
         gc.weightx=0;
         gc.anchor=GridBagConstraints.LINE_END;
+        gc.insets = new Insets(4,10,4,10);
         contentPane.add(lblName,gc);
         gc.gridy++;
         contentPane.add(lblEmail,gc);
@@ -177,8 +181,11 @@ public class AddStudent extends JFrame {
         contentPane.add(lblCountry,gc);
         gc.gridy++;
         contentPane.add(lblContactNo,gc);
-        gc.gridy++;
-        contentPane.add(addButton,gc);
+
+
+//        gc.gridy++;
+//        gc.gridx=1;
+//        contentPane.add(addButton,gc);
 
 
 
@@ -208,11 +215,24 @@ public class AddStudent extends JFrame {
         contentPane.add(countryField,gc);
         gc.gridy++;
         contentPane.add(contactNoField,gc);
+
+
+//        gc.gridy++;
+//        gc.gridx=2;
+//        contentPane.add(cancelButton,gc);
+
+        btnGc.gridx=0;
+        btnGc.gridy=0;
+        btnGc.insets = new Insets(4,10,4,10);
+        btnPane.add(addButton,btnGc);
+        btnGc.gridx++;
+        btnPane.add(cancelButton,btnGc);
+
+        gc.gridx=0;
         gc.gridy++;
-        contentPane.add(cancelButton,gc);
-
-
-
+        gc.gridwidth=2;
+        gc.fill=GridBagConstraints.HORIZONTAL;
+        contentPane.add(btnPane,gc);
 
         setLocationRelativeTo(null);
     }
