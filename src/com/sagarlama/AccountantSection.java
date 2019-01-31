@@ -127,6 +127,7 @@ public class AccountantSection extends JFrame{
 
 
         setMinimumSize(new Dimension(400,400));
+        setLocationRelativeTo(null);
         setResizable(false);
     }
 
