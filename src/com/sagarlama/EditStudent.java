@@ -12,6 +12,8 @@ import java.awt.Color;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class EditStudent extends JFrame {
     static EditStudent frame;
@@ -192,6 +194,21 @@ public class EditStudent extends JFrame {
         btnUpdate.setForeground(Color.white);
         btnUpdate.setBackground(new Color(42, 94, 84));
 
+        textField_5.setEditable(false);
+        textField_4.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                int fee = Integer.parseInt(textField_3.getText());
+                int paid = Integer.parseInt(textField_4.getText());
+                int due = fee - paid;
+                textField_5.setText(Integer.toString(due));
+            }
+        });
 
 
         GroupLayout gl_contentPane = new GroupLayout(contentPane);

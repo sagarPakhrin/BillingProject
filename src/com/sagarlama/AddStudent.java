@@ -5,6 +5,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class AddStudent extends JFrame {
     static AddStudent frame;
@@ -132,6 +134,22 @@ public class AddStudent extends JFrame {
         contactNoField = new JTextField(20);
 
 
+        dueField.setEditable(false);
+        paidField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                int fee = Integer.parseInt(feeField.getText());
+                int paid = Integer.parseInt(paidField.getText());
+                int due = fee - paid;
+                dueField.setText(Integer.toString(due));
+            }
+        });
+
 //        Adding Lables to content pane
         gc.gridy=0;
         gc.gridx=0;
@@ -191,5 +209,10 @@ public class AddStudent extends JFrame {
         contentPane.add(contactNoField,gc);
         gc.gridy++;
         contentPane.add(cancelButton,gc);
+
+
+
+
+        setLocationRelativeTo(null);
     }
 }
