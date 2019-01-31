@@ -1,6 +1,7 @@
 package com.sagarlama;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -16,23 +17,41 @@ public class MenuBar extends JMenuBar {
         JMenuItem addStudent = new JMenuItem("Add Student");
         JMenuItem deleteStudent = new JMenuItem("Delete Student");
         JMenuItem exitItem = new JMenuItem("Exit");
-        fileMenu.add(addStudent);
-        fileMenu.add(deleteStudent);
-        fileMenu.add(exitItem);
-
-
-//        Adding Mneumonics
-        fileMenu.setMnemonic(KeyEvent.VK_F);
-        editMenu.setMnemonic(KeyEvent.VK_E);
-        exitItem.setMnemonic(KeyEvent.VK_X);
-        viewMenu.setMnemonic(KeyEvent.VK_V);
-
-
-//        Adding Accelectors
-        exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,ActionEvent.CTRL_MASK));
+        JMenuItem editStudent = new JMenuItem("Edit Student");
+        JMenuItem studentDetails = new JMenuItem("Student Details");
+        JMenuItem dueFee = new JMenuItem("Due Fee");
 
 
 //        Action Listeners
+
+        addStudent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddStudent.main(new String[]{});
+            }
+        });
+
+        editStudent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                EditStudent.main(new String[]{});
+            }
+        });
+
+        studentDetails.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ViewStudent.main(new String[]{});
+            }
+        });
+
+        dueFee.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DueFee.main(new String[]{});
+            }
+        });
+
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,6 +61,41 @@ public class MenuBar extends JMenuBar {
                 }
             }
         });
+
+
+
+//        Adding Mneumonics
+        fileMenu.setMnemonic(KeyEvent.VK_F);
+        editMenu.setMnemonic(KeyEvent.VK_E);
+        exitItem.setMnemonic(KeyEvent.VK_X);
+        viewMenu.setMnemonic(KeyEvent.VK_V);
+        addStudent.setMnemonic(KeyEvent.VK_A);
+        deleteStudent.setMnemonic(KeyEvent.VK_D);
+        editStudent.setMnemonic(KeyEvent.VK_S);
+        studentDetails.setMnemonic(KeyEvent.VK_S);
+        dueFee.setMnemonic(KeyEvent.VK_D);
+
+
+//        Adding Accelectors
+        exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,ActionEvent.CTRL_MASK));
+        addStudent.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A,ActionEvent.CTRL_MASK));
+        deleteStudent.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,ActionEvent.CTRL_MASK));
+
+
+
+
+
+        fileMenu.add(addStudent);
+        fileMenu.add(deleteStudent);
+        fileMenu.add(exitItem);
+
+
+        editMenu.add(editStudent);
+
+        viewMenu.add(studentDetails);
+        viewMenu.add(dueFee);
+
+
         add(fileMenu);
         add(editMenu);
         add(viewMenu);

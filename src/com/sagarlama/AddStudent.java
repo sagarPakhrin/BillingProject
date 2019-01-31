@@ -115,6 +115,7 @@ public class AddStudent extends JFrame {
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                AccountantSection.main(new String[]{});
                 frame.dispose();
             }
         });

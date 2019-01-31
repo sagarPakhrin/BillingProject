@@ -335,6 +335,7 @@ public class EditStudent extends JFrame {
                                 .addContainerGap())
         );
         contentPane.setLayout(gl_contentPane);
+        setLocationRelativeTo(null);
     }
 }
 
