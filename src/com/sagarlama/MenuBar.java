@@ -52,6 +52,13 @@ public class MenuBar extends JMenuBar {
             }
         });
 
+        deleteStudent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeleteStudent.main(new String[]{});
+            }
+        });
+
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,6 +98,7 @@ public class MenuBar extends JMenuBar {
 
 
         editMenu.add(editStudent);
+        editMenu.add(deleteStudent);
 
         viewMenu.add(studentDetails);
         viewMenu.add(dueFee);

@@ -111,6 +111,20 @@ public class StudentDatabase {
         return status;
     }
 
+    public static int deleteStudent(Student student){
+        int status = 0;
+        try {
+            Connection connection = AccountDatabase.getCon();
+            PreparedStatement statement=connection.prepareStatement("delete from student where rollno = ?");
+            statement.setInt(1,student.getRollno());
+            status=statement.executeUpdate();
+            connection.close();
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return status;
+    }
+
     public static Student getStudentByRollNo(int rollno){
         Student student = new Student();
         try {
