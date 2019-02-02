@@ -14,7 +14,7 @@ public class AddStudent extends JFrame {
     private JPanel btnPane;
     private MenuBar myMenubar=new MenuBar();
     private Color bgColor = new Color(66, 66, 66);
-    private Color btnColor = new Color(66, 66, 66);
+    private Color btnColor = new Color(10, 47, 54);
     private Color brand = new Color(10, 47, 54);
     private Font btnFont = new Font("Crimson Text",Font.BOLD,17);
     private Color inputFieldColor = new Color(115, 104, 101);
@@ -81,7 +81,17 @@ public class AddStudent extends JFrame {
         JLabel lblCountry = new JLabel("Country:");
         JLabel lblContactNo = new JLabel("Contact No:");
 
-
+        lblName.setForeground(Color.white);
+        lblEmail.setForeground(Color.white);
+        lblGrade.setForeground(Color.white);
+        lblFee.setForeground(Color.white);
+        lblPaid.setForeground(Color.white);
+        lblDue.setForeground(Color.white);
+        lblAddress.setForeground(Color.white);
+        lblCity.setForeground(Color.white);
+        lblState.setForeground(Color.white);
+        lblCountry.setForeground(Color.white);
+        lblContactNo.setForeground(Color.white);
 //        Buttons
         addButton = new JButton("Submit");
         cancelButton = new JButton("Cancel");
@@ -294,4 +304,12 @@ public class AddStudent extends JFrame {
 
         setLocationRelativeTo(null);
     }
+
+    public Color getBgColor() {
+        return bgColor;
+    }
+    //    private Color btnColor = new Color(10, 47, 54);
+//    private Color brand = new Color(10, 47, 54);
+//    private Font btnFont = new Font("Crimson Text",Font.BOLD,17);
+//    private Color inputFieldColor = new Color(115, 104, 101);
 }

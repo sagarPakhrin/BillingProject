@@ -127,9 +127,6 @@ public class AccountantSection extends JFrame{
         contentPane.add(btnLogout,gc);
 
 
-
-
-
         setMinimumSize(new Dimension(400,400));
         setLocationRelativeTo(null);
         setResizable(false);
