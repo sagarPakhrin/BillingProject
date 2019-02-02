@@ -251,11 +251,6 @@ public class AddStudent extends JFrame {
         contentPane.add(lblContactNo,gc);
 
 
-//        gc.gridy++;
-//        gc.gridx=1;
-//        contentPane.add(addButton,gc);
-
-
 
 //        Adding TextFiels
         gc.gridy=0;
@@ -285,9 +280,6 @@ public class AddStudent extends JFrame {
         contentPane.add(contactNoField,gc);
 
 
-//        gc.gridy++;
-//        gc.gridx=2;
-//        contentPane.add(cancelButton,gc);
 
         btnGc.gridx=0;
         btnGc.gridy=0;
